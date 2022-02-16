@@ -1,5 +1,6 @@
 #include <Arduino.h>
 // Libraries
+#include <SPI.h>
 #include <RTClib.h> // Real Time Clock module
 #include <EEPROM.h> // EEPROM partition from flash memory
 #include <Wire.h> // I2C
