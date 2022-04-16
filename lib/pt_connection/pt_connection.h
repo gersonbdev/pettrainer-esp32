@@ -1,3 +1,5 @@
+void task_connection(void * parameters);
+
 void connectionServer();
 
 void setup_wifi();

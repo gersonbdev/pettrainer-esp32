@@ -1,4 +1,5 @@
 #include <Arduino.h>
+
 // Libraries
 #include <SPI.h>
 #include <RTClib.h> // Real Time Clock module
@@ -6,38 +7,32 @@
 #include <Wire.h> // I2C
 
 // User Libraries
-#include "pt_connection.h"
 #include "pt_constants.h"
+#include "pt_setup.h"
+#include "pt_connection.h"
 #include "pt_dispense.h"
 
-static bool power_button_event = false;
-static bool enable = false;
-static short int state = 1;
-
 void setup() {
-  // put your setup code here, to run once:
+        Serial.begin(115200);
+
+        xTaskCreate(
+                task_dispense,
+                "Task dispense",
+                1000,
+                NULL,
+                1,
+                NULL
+        );
+
+        xTaskCreate(
+                task_connection,
+                "Task connection",
+                1000,
+                NULL,
+                1,
+                NULL
+        );
 }
 
 void loop() {
-  if (power_button_event) {
-    enable = !enable;
-  }
-
-  if (enable) {
-    switch (state) {
-      case 1:
-        break;
-      case 2:
-        break;
-      case 3:
-        break;
-      case 4:
-        break;
-      case 5:
-        break;
-      default:
-        state = 1;
-        break;
-    }
-  }
 }
