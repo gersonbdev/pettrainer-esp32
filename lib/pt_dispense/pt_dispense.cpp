@@ -3,7 +3,7 @@
 
 #include "pt_definitions.h"
 
-extern RTC_DS3231 MyRtc;
+extern RTC_DS3231 rtc_module;
 extern PettBasicData pett_data;
 
 // Pet's age calculation control variables
@@ -27,14 +27,14 @@ void task_dispense(void * pvParameters)
 }
 
 /*
- * Calculates pet's age by using MyRtc instance
+ * Calculates pet's age by using rtc_module instance
  */
 void calculate_pet_age()
 {
         // Calculation pet's age
         age_in_days = (
-                (MyRtc.now().year()*365 + MyRtc.now().month()*30
-                + MyRtc.now().day()+1) - (pett_data.PetBirthDay[0]*365
+                (rtc_module.now().year()*365 + rtc_module.now().month()*30
+                + rtc_module.now().day()+1) - (pett_data.PetBirthDay[0]*365
                 + pett_data.PetBirthDay[1]*30 + pett_data.PetBirthDay[2])
         );
 

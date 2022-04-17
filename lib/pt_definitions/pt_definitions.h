@@ -17,6 +17,34 @@ struct PettDate {
         uint8_t second;
 };
 
+struct PettDispenseData {
+        uint16_t time;
+        uint16_t amount;
+};
+
+#define BITS_0_TO_7(input)  (input & 0xFF)
+#define BITS_8_TO_15(input) ((input & 0xFF00) >> 8)
+
+#define DISPENSED_PACK_SIZE 4
+
+enum EEPROM_ADDRESSES {
+        STATE_ADDRESS,
+        LAST_MODIFIED_WIFI_ADDRESS = 2,
+        WIFI_SSID_ADDRESS = 9,
+        WIFI_PASSWORD_ADDRESS = 109,
+        BIRTH_DATE_ADDRESS = 209,
+        LAST_MODIFICATION_OF_DISPENSED_ADDRESS = 213,
+        NUMBER_OF_DISPENSED_ADDRESS = 220,
+        DISPENSING_PACKAGES_ADDRESS = 222
+};
+
+enum EEPROM_STATES {
+        DISCONFIGURED_EEPROM,
+        WIFI_CONFIGURED,
+        DISPENSED_CONFIGURED
+};
+
+
 // PINOUTS
 #define SCREW_MOTOR 27 // Digital pin output D27 -> endless screw
 #define LINEAR_MOTOR_R 25 // Digital pin output D34 -> linear actuator right turn (H bridge)
