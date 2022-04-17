@@ -6,7 +6,7 @@
 #include <HTTPClient.h>
 #include <ArduinoJson.h>
 
-#include "pt_connection.h"
+#include "pett_connection.h"
 
 //-------------------VARIABLES GLOBALES-----------------------
 static int contconexion = 0;

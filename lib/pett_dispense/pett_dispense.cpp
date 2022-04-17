@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <RTClib.h>
 
-#include "pt_definitions.h"
+#include "pett_definitions.h"
 
 extern RTC_DS3231 rtc_module;
 extern PettBasicData pett_data;

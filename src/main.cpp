@@ -7,10 +7,11 @@
 #include <Wire.h> // I2C
 
 // User Libraries
-#include "pt_constants.h"
-#include "pt_setup.h"
-#include "pt_connection.h"
-#include "pt_dispense.h"
+#include "pett_definitions.h"
+#include "pett_setup.h"
+#include "pett_connection.h"
+#include "pett_dispense.h"
+#include "pett_eeprom.h"
 
 void setup() {
         Serial.begin(115200);

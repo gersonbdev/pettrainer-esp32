@@ -2,7 +2,7 @@
 #include <EEPROM.h>
 #include <RTClib.h>
 
-#include "pt_definitions.h"
+#include "pett_eeprom.h"
 
 extern struct PettBasicData pett_data;
 

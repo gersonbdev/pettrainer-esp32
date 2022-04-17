@@ -1,3 +1,6 @@
+#ifndef pett_definitions_h
+#define pett_definitions_h
+
 #include <Arduino.h>
 
 struct PettBasicData{
@@ -68,3 +71,5 @@ enum EEPROM_STATES {
 #define SETUP_EASY (EEPROM.read(0) == CONFIG_EASY) // Preset easy configuration -> 1
 #define SETUP_CUSTOM (EEPROM.read(0) == CONFIG_CUSTOM) // Preset customized configuration -> 2
 #define TIME_WINDOW (TIME_SUP - TIME_INF) // Window time in hours in 24h format
+
+#endif

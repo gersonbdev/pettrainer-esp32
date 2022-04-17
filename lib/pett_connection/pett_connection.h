@@ -1,3 +1,6 @@
+#ifndef pett_connection_h
+#define pett_connection_h
+
 void task_connection(void * parameters);
 
 void connectionServer();
@@ -17,3 +20,5 @@ String leer(int addr);
 void escanear();
 
 void setupInitialIoT();
+
+#endif
